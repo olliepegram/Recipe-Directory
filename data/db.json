@@ -36,6 +36,19 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "title": "Beef stew",
+      "ingredients": [
+        "ham",
+        "pineapple",
+        "carrot",
+        "kangaroo",
+        "beans"
+      ],
+      "method": "Put ingredients in bowl and mix, cook for 24 hours at 45 degrees celsius",
+      "cookingTime": "7 minutes",
+      "id": "0-dp7bL"
     }
   ]
 }
