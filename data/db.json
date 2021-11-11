@@ -77,6 +77,17 @@
       "method": "Place water in pan. Heat pan. Pour water.",
       "cookingTime": "10 minutes",
       "id": "7jBIcpm"
+    },
+    {
+      "title": "Test",
+      "ingredients": [
+        "eggs",
+        "ham",
+        "geen dye"
+      ],
+      "method": "Mix and fry.",
+      "cookingTime": "7 minutes",
+      "id": "5xs3QQm"
     }
   ]
 }
