@@ -49,6 +49,34 @@
       "method": "Put ingredients in bowl and mix, cook for 24 hours at 45 degrees celsius",
       "cookingTime": "7 minutes",
       "id": "0-dp7bL"
+    },
+    {
+      "title": "Carrot",
+      "ingredients": [
+        "carrot"
+      ],
+      "method": "Peel carrot, eat carrot.",
+      "cookingTime": "2 minutes",
+      "id": "PsA5Llm"
+    },
+    {
+      "title": "Scrambled Eggs",
+      "ingredients": [
+        "eggs",
+        "oil"
+      ],
+      "method": "Scramble egg over heat.",
+      "cookingTime": "5 minutes",
+      "id": "b6dOsHR"
+    },
+    {
+      "title": "Hot water",
+      "ingredients": [
+        "water"
+      ],
+      "method": "Place water in pan. Heat pan. Pour water.",
+      "cookingTime": "10 minutes",
+      "id": "7jBIcpm"
     }
   ]
 }
