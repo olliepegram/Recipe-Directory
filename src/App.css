@@ -1,3 +1,11 @@
 .App {
-  min-height: 100%;
+    min-height: 100%;
+}
+
+.App.dark {
+    background: #333;
+}
+
+.App.dark .page-title {
+    color: #e4e4e4;
 }

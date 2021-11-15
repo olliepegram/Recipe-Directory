@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { useTheme } from '../../hooks/useTheme';
 
 import './Create.css';
 
@@ -11,6 +12,7 @@ export default function Create() {
     const [newIngredient, setNewIngredient] = useState('');
     const [ingredients, setIngredients] = useState([]);
     const ingredientInput = useRef(null);
+    const { mode } = useTheme();
     const history = useNavigate();
     const { postData, data, error } = useFetch(
         'https://damp-spire-80492.herokuapp.com/recipes',
@@ -46,7 +48,7 @@ export default function Create() {
     }, [data, history]);
 
     return (
-        <div className='create'>
+        <div className={`create ${mode}`}>
             <h2 className='page-title'>Add a New Recipe</h2>
 
             <form onSubmit={handleSubmit}>
