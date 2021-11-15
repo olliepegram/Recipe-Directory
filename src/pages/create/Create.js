@@ -13,7 +13,7 @@ export default function Create() {
     const ingredientInput = useRef(null);
     const history = useNavigate();
     const { postData, data, error } = useFetch(
-        'http://localhost:3000/recipes',
+        'https://damp-spire-80492.herokuapp.com/recipes',
         'POST'
     );
 

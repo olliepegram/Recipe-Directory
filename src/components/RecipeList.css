@@ -3,7 +3,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 980px;
+    max-width: 1200px;
     margin: 40px auto;
 }
 .recipe-list .card {
@@ -14,8 +14,8 @@
     transition: all 0.3s ease;
     position: relative;
     height: 300px;
-    width: 400px;
-    margin: 20px 0;
+    width: 350px;
+    margin: 20px 20px;
 }
 .recipe-list .card:hover {
     transform: rotate(2deg);

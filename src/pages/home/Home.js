@@ -6,7 +6,7 @@ import RecipeList from '../../components/RecipeList';
 
 export default function Home() {
     const { data, isPending, error } = useFetch(
-        'http://localhost:3000/recipes'
+        'https://damp-spire-80492.herokuapp.com/recipes'
     );
 
     return (
