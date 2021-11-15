@@ -14,7 +14,7 @@ export default function Create() {
     const ingredientInput = useRef(null);
     const { mode } = useTheme();
     const history = useNavigate();
-    const { postData, data, error } = useFetch(
+    const { postData, data } = useFetch(
         'https://damp-spire-80492.herokuapp.com/recipes',
         'POST'
     );
