@@ -1,14 +1,42 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
 import { useTheme } from '../../hooks/useTheme';
+import { projectFirestore } from '../../firebase/config';
 
 import './Recipes.css';
 
 export default function Recipes() {
     const { id } = useParams();
-    const url = 'https://damp-spire-80492.herokuapp.com/recipes/' + id;
-    const { data: recipe, isPending, error } = useFetch(url);
     const { mode } = useTheme();
+
+    const [recipe, setRecipe] = useState(null);
+    const [isPending, setIsPending] = useState(false);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        setIsPending(true);
+
+        const unsub = projectFirestore
+            .collection('recipes')
+            .doc(id)
+            .onSnapshot((doc) => {
+                if (doc.exists) {
+                    setIsPending(false);
+                    setRecipe(doc.data());
+                } else {
+                    setIsPending(false);
+                    setError('Could not find that recipe');
+                }
+            });
+
+        return () => unsub();
+    }, [id]);
+
+    // const handleClick = () => {
+    //     projectFirestore.collection('recipes').doc(id).update({
+    //         title: 'Something completely different',
+    //     });
+    // };
 
     return (
         <div className={`recipe ${mode}`}>

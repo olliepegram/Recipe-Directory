@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
 import { useTheme } from '../../hooks/useTheme';
+import { projectFirestore } from '../../firebase/config';
 
 import './Create.css';
 
@@ -14,20 +14,22 @@ export default function Create() {
     const ingredientInput = useRef(null);
     const { mode } = useTheme();
     const history = useNavigate();
-    const { postData, data } = useFetch(
-        'https://damp-spire-80492.herokuapp.com/recipes',
-        'POST'
-    );
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        postData({
+        const doc = {
             title,
             ingredients,
             method,
             cookingTime: cookingTime + ' minutes',
-        });
+        };
+        try {
+            await projectFirestore.collection('recipes').add(doc);
+            history('/');
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     const handleAdd = (e) => {
@@ -40,12 +42,6 @@ export default function Create() {
         setNewIngredient('');
         ingredientInput.current.focus();
     };
-
-    useEffect(() => {
-        if (data) {
-            history('/');
-        }
-    }, [data, history]);
 
     return (
         <div className={`create ${mode}`}>
